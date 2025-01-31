@@ -11,6 +11,11 @@ function Login() {
 
     const navigate = useNavigate();
 
+    // For Vite:
+    const API_URL = import.meta.env.VITE_API_URL || "https://weexist99.onrender.com";
+    // For Create React App:
+    // const API_URL = process.env.REACT_APP_API_URL || "https://weexist99.onrender.com";
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setLoginInfo((prev) => ({ ...prev, [name]: value }));
@@ -19,22 +24,25 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         const { email, password } = loginInfo;
+
         if (!email || !password) {
             return handleError('Email and password are required.');
         }
-        try {
-            // const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/login`;
-            const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://weexist99.onrender.com";
 
-            const response = await fetch(url, {
+        console.log("API_URL:", API_URL);  // Debugging
+
+        try {
+            const response = await fetch(`${API_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(loginInfo),
             });
+
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
+
             if (success) {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
@@ -82,7 +90,7 @@ function Login() {
                         Login
                     </button>
                     <p className="text-center text-gray-600 mt-3">
-                        Don’t have an account?{' '}
+                        Don't have an account?{' '}
                         <Link to="/signup" className="text-purple-600 hover:text-purple-700 font-semibold ml-1">Sign Up</Link>
                     </p>
                 </form>
