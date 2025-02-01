@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure toast styles are included
 import { Eye, EyeOff } from 'lucide-react';
-import { handleError, handleSuccess } from '../../utils';
 
 function Signup() {
     const [signupInfo, setSignupInfo] = useState({
@@ -11,16 +11,13 @@ function Signup() {
         password: '',
         confirmPassword: ''
     });
-
+    const [isLoading, setIsLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const navigate = useNavigate();
 
-    // For Vite:
     const API_URL = import.meta.env.VITE_API_URL || "https://weexist99.onrender.com";
-    // For Create React App:
-    // const API_URL = process.env.REACT_APP_API_URL || "https://weexist99.onrender.com";
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,37 +37,34 @@ function Signup() {
         const { name, email, password, confirmPassword } = signupInfo;
 
         if (!name || !email || !password || !confirmPassword) {
-            return handleError('All fields are required.');
+            return toast.error('All fields are required.', { position: 'top-right', autoClose: 3000 });
         }
 
         if (password !== confirmPassword) {
-            return handleError('Passwords do not match.');
+            return toast.error('Passwords do not match.', { position: 'top-right', autoClose: 3000 });
         }
 
+        setIsLoading(true);
         try {
             const response = await fetch(`${API_URL}/auth/signup`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    password
-                }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password }),
             });
 
             const result = await response.json();
-            const { success, message, error } = result;
+            console.log(result); // Debugging: Check API response in console
 
-            if (success) {
-                handleSuccess(message || 'Signup successful!');
-                setTimeout(() => navigate('/login'), 1000);
+            if (result.success) {
+                toast.success(result.message || 'Signup successful!', { position: 'top-right', autoClose: 2000 });
+                setTimeout(() => navigate('/login'), 1000); // Delay navigation to show toast
             } else {
-                handleError(error?.details?.[0]?.message || message);
+                toast.error(result.error?.details?.[0]?.message || result.message, { position: 'top-right', autoClose: 3000 });
             }
         } catch (err) {
-            handleError(err.message || 'Something went wrong.');
+            toast.error(err.message || 'Something went wrong.', { position: 'top-right', autoClose: 3000 });
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -117,11 +111,7 @@ function Signup() {
                                 onClick={() => togglePasswordVisibility('password')}
                                 className="absolute right-3 top-[60%] transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                             >
-                                {showPassword ? (
-                                    <EyeOff className="w-5 h-5" />
-                                ) : (
-                                    <Eye className="w-5 h-5" />
-                                )}
+                                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                             </button>
                         </div>
                     </div>
@@ -141,19 +131,17 @@ function Signup() {
                                 onClick={() => togglePasswordVisibility('confirm')}
                                 className="absolute right-3 top-[60%] transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                             >
-                                {showConfirmPassword ? (
-                                    <EyeOff className="w-5 h-5" />
-                                ) : (
-                                    <Eye className="w-5 h-5" />
-                                )}
+                                {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                             </button>
                         </div>
                     </div>
                     <button
                         type="submit"
-                        className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-200"
+                        disabled={isLoading}
+                        className={`w-full py-3 bg-purple-600 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-200 
+                        ${isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-purple-700'}`}
                     >
-                        Sign Up
+                        {isLoading ? 'Signing Up...' : 'Sign Up'}
                     </button>
                     <p className="text-center text-gray-600 mt-3">
                         Already have an account?{' '}

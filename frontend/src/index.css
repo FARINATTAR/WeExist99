@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+:root {
+    --neon-green: #39FF14;
+    --neon-pink: #FF10F0;
+  }
+  
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+  
+  .text-neon-green {
+    color: var(--neon-green);
+  }
+  
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+  
+  .text-neon-pink {
+    color: var(--neon-pink);
+  }
+
+  .font-dela-gothic {
+    font-family: 'Dela Gothic One', sans-serif;  
+    font-weight: 100;
+    font-style: normal
+  }
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 90;
+    font-style: normal
+  }
+  .neon-text:hover {
+    text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6, 0 0 20px #2563eb;
+    filter: brightness(1);
+  }
+
+  .unlock-regular {
+    font-family: "Unlock", serif;
+    font-weight: 400;
+    transform: scaleY(1.2);
+    font-style: normal;
+    letter-spacing: 5px;
+  }
+  
