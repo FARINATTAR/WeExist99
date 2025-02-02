@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-slate-950 min-h-screen w-full text-white flex flex-col items-center">
+    <div className="bg-black min-h-screen w-full text-white flex flex-col items-center">
       <Navbar />
       
       {/* Centered Content */}
