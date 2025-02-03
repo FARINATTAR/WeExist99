@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import Earth from '../models/Earth';
+import { Hud } from '@react-three/drei';
+import HungerImpactSection from '../Components/WhyWeExist';
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -26,6 +28,10 @@ const Home = () => {
         {/* Earth Model - Centered Properly */}
         <div className="w-full h-[500px] flex justify-center items-center -mt-10">
           <Earth />
+        </div>
+
+        <div>
+          <HungerImpactSection/>
         </div>
       </div>
     </div>
