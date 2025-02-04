@@ -3,6 +3,9 @@ import Navbar from '../Components/Navbar';
 import Earth from '../models/Earth';
 import { Hud } from '@react-three/drei';
 import HungerImpactSection from '../Components/WhyWeExist';
+import BreakTheChains from './BreakTheChains';
+import JigsawGame from './BreakTheChains';
+import HowYouCanHelp from '../Components/HowWeHelp';
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -32,6 +35,10 @@ const Home = () => {
 
         <div>
           <HungerImpactSection/>
+        </div>
+
+        <div>
+          <HowYouCanHelp/>
         </div>
       </div>
     </div>

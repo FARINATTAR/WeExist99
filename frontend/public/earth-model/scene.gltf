@@ -353,16 +353,16 @@
   ],
   "images": [
     {
-      "uri": "textures/Material.002_baseColor.jpeg"
+      "uri": "textures/earth_basecolor.jpeg"
     },
     {
-      "uri": "textures/Material.001_baseColor.jpeg"
+      "uri": "textures/earth_cloud.jpeg"
     },
     {
-      "uri": "textures/Material.001_metallicRoughness.png"
+      "uri": "textures/metallic_roughness.png"
     },
     {
-      "uri": "textures/Material.001_normal.jpeg"
+      "uri": "textures/normal.jpeg"
     }
   ],
   "materials": [
