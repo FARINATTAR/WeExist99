@@ -6,6 +6,10 @@ import HungerImpactSection from '../Components/WhyWeExist';
 import BreakTheChains from './BreakTheChains';
 import JigsawGame from './BreakTheChains';
 import HowYouCanHelp from '../Components/HowWeHelp';
+import ImpactTracker from '../Components/ImpactTracker';
+import BadgesSection from '../Components/BadgesSection';
+import CTASection from '../Components/CTASection';
+import Footer from '../Components/Footer'
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -40,6 +44,22 @@ const Home = () => {
         <div>
           <HowYouCanHelp/>
         </div>
+
+        <div>
+          <ImpactTracker/>
+        </div>
+      </div>
+
+      <div>
+        <BadgesSection/>
+      </div>
+
+      <div>
+        <CTASection/>
+      </div>
+
+      <div>
+        <Footer/>
       </div>
     </div>
   );
