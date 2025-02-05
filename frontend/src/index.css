@@ -36,6 +36,12 @@
     filter: brightness(1);
   }
 
+  .font-dela-gothic1 {
+    font-family: 'Dela Gothic One', sans-serif;  
+    font-weight: 20px;
+    font-style: normal
+  }
+
   .unlock-regular {
     font-family: "Unlock", serif;
     font-weight: 400;
@@ -43,4 +49,24 @@
     font-style: normal;
     letter-spacing: 5px;
   }
-  
+
+.footer {
+    width: 100%;
+    background-color: black;
+    color: gray;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+

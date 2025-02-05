@@ -58,7 +58,7 @@ const Home = () => {
         <CTASection/>
       </div>
 
-      <div>
+      <div className='w-full'>
         <Footer/>
       </div>
     </div>

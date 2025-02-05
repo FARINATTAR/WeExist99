@@ -3,7 +3,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-import BreakTheChains from "./pages/BreakTheChains";  // Import the new page
+import BreakTheChains from "./pages/BreakTheChains";
+import WhatWeDo from "./pages/WhatWeDo";
+import DonationPage from "./pages/Donate";
 
 const App = () => {
   return (
@@ -13,7 +15,8 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/break-the-chains" element={<BreakTheChains />} /> {/* New route */}
+        <Route path="/what-we-do" element={<WhatWeDo />} />
+        <Route path="/donate" element={<DonationPage />} />
       </Routes>
     </div>
   );

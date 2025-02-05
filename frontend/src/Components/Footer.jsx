@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-gray-300 w-full mt-auto relative bottom-0">
+    <footer className="bg-black footer text-gray-300 w-full mt-auto relative bottom-0">
       {/* Main Content */}
       <div className="w-full py-16">
         {/* Content Container */}
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-gray-800">
+          <div className="pt-6 border-t border-gray-800 -mb-[25px]">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-sm text-gray-400">
                 © 2024 Your Organization. All rights reserved.
