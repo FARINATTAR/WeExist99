@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import gigaChad from "../assets/Gigachad.gif";
+import gigaChad from "../assets/GigaChad.gif";
 import chillGuy from "../assets/ChillGuy.gif";
 import pookie from "../assets/Pookie.gif";
 
