@@ -27,7 +27,7 @@ export default function Navbar() {
           <NavItem to="/what-we-do" label="What We Do" />
           <NavItem to="/leftover-to-life" label="Leftover to Life" />
           <NavItem to="/give-a-hand" label="Give a Hand" />
-          <NavItem to="/badges" label="Badges" />
+          <NavItem to="/gamified-giving" label="Gamified giving" />
           <NavItem to="/get-involved" label="Get Involved" />
         </ul>
 
