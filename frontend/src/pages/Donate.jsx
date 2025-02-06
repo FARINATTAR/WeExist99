@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // To get the selected vibe from the previous page.
-import gigaChad from "../assets/Gigachad.gif";
+import gigaChad from "../assets/GigaChad.gif";
 import chillGuy from "../assets/ChillGuy.gif";
 import pookie from "../assets/Pookie.gif";
 import { Star } from 'lucide-react';
