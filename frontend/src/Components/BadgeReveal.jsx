@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import ally from "../assets/Member.png";
-import Beacon from "../assets/BeaconOfHope.png"; // Updated filename
+import Beacon from "../assets/BeaconofHope.png"; // Updated filename
 import impactBadge from "../assets/ImpactGuardian.png"; // Remove spaces
 import kindnessBadge from "../assets/Kindness.png";
 import JusticeBadge from "../assets/JusticeSentinel.png";
