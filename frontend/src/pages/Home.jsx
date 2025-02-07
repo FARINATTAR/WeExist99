@@ -45,9 +45,9 @@ const Home = () => {
           <HowYouCanHelp/>
         </div>
 
-        <div>
+        {/* <div>
           <ImpactTracker/>
-        </div>
+        </div> */}
       </div>
 
       <div>
