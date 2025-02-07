@@ -52,7 +52,7 @@ export default function BadgeShowcase() {
   const prevBadge = () => setCurrentBadge((prev) => (prev - 1 + badges.length) % badges.length);
 
   return (
-    <div className="flex flex-col items-center justify-center p-6">
+    <div className=" bg-black flex flex-col items-center justify-center p-6">
       {/* Badge Display Section */}
       <div className="relative w-96 h-96 flex items-center justify-center shadow-lg bg-gray-900 rounded-2xl">
         <ChevronLeft className="absolute left-4 text-white cursor-pointer" size={40} onClick={prevBadge} />
