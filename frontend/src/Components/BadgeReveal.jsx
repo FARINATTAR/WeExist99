@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import ally from "../assets/Member.png";
-import Beacon from "../assets/Beacon of hope.png";
-import impactBadge from "../assets/Impact Guardian.png";
+import Beacon from "../assets/BeaconOfHope.png"; // Updated filename
+import impactBadge from "../assets/ImpactGuardian.png"; // Remove spaces
 import kindnessBadge from "../assets/Kindness.png";
-import JusticeBadge from "../assets/Justice Sentinel.png";
-import Vangaurd from "../assets/Trailblazer of Change.png";
+import JusticeBadge from "../assets/JusticeSentinel.png";
+import Vanguard from "../assets/TrailblazerOfChange.png";
 const badges = [
   {
     name: "WeExist Ally",
@@ -39,7 +39,7 @@ const badges = [
   },
   {
     name: "Trailblazer of Change",
-    icon: Vangaurd,
+    icon: Vanguard,
     description: "The ultimate badge for long-term leadership in WeExist!",
     unlocked: false,
   },
