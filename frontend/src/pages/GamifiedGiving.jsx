@@ -1,6 +1,8 @@
 import BadgeShowcase from '../Components/BadgeReveal';
 import Navbar from '../Components/Navbar'; 
 import React, { useState } from 'react'; 
+import UnlockBadge from '../Components/UnlockBadges';
+import BadgeCollection from '../Components/UnlockBadges';
 
 
 const GamifiedGiving = () => { 
@@ -12,6 +14,9 @@ const GamifiedGiving = () => {
 
     <div>
       <BadgeShowcase/>
+    </div>
+    <div>
+      <BadgeCollection/>
     </div>
     </div>
   )
