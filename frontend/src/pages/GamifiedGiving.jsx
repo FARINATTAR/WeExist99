@@ -1,13 +1,14 @@
 import BadgeShowcase from '../Components/BadgeReveal';
 import Navbar from '../Components/Navbar'; 
 import React, { useState } from 'react'; 
-import UnlockBadge from '../Components/UnlockBadges';
 import BadgeCollection from '../Components/UnlockBadges';
-
+import VibeCheck from "../Components/VibeCheck";
+import ImpactDashboard from '../Components/BadgeAndProgressTracker';
+import LeaderboardSection from '../Components/CommunityLeaderboard';
 
 const GamifiedGiving = () => { 
   return (
-    <div>
+    <div className='bg-black'>
     <div>
       <Navbar/>
     </div>
@@ -17,6 +18,18 @@ const GamifiedGiving = () => {
     </div>
     <div>
       <BadgeCollection/>
+    </div>
+
+    <div>
+      <VibeCheck/>
+    </div>
+
+    <div>
+      <ImpactDashboard/>
+    </div>
+
+    <div>
+      <LeaderboardSection/>
     </div>
     </div>
   )

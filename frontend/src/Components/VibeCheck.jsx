@@ -1,54 +1,55 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import gigaChad from "../assets/GigaChad.gif";
 import chillGuy from "../assets/ChillGuy.gif";
 import pookie from "../assets/Pookie.gif";
 
 const VibeCheckDonation = () => {
   const [selectedVibe, setSelectedVibe] = useState(null);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const vibeOptions = [
     {
       id: 'gigachad',
-      name: 'Gigachad',
+      name: 'GIGACHAD',
       text: 'I donate like a legend.',
-      description: 'Legendary hero mode ON.',
+      description: 'LEGENDARY HERO MODE ON.',
       gifUrl: gigaChad,
-      textColor: 'text-lime-300',
-      borderColor: 'border-lime-500',
+      textColor: 'bg-gradient-to-r from-green-200 via-lime-300 to-green-400 bg-clip-text text-transparent',
+      borderColor: 'border-white-300',
     },
     {
       id: 'chill',
-      name: 'Chill Guy',
+      name: 'CHILL GUY',
       text: 'I help out in my own way.',
-      description: 'Cool and collected hero.',
+      description: 'COOL AND COLLECTED HERO.',
       gifUrl: chillGuy,
-      textColor: 'text-cyan-300',
-      borderColor: 'border-cyan-500',
+      textColor: 'bg-gradient-to-r from-blue-200 via-cyan-300 to-blue-400 bg-clip-text text-transparent',
+      borderColor: 'border-white-300',
     },
     {
       id: 'pookie',
-      name: 'Pookie',
+      name: 'POOKIE',
       text: 'I do things my way, but I still care.',
-      description: 'Unique hero energy.',
+      description: 'UNIQUE HERO ENERGY.',
       gifUrl: pookie,
-      textColor: 'text-pink-300',
-      borderColor: 'border-pink-500',
+      textColor: 'bg-gradient-to-r from-pink-200 via-rose-300 to-pink-400 bg-clip-text text-transparent',
+      borderColor: 'border-white-300',
     }
   ];
 
   const handleVibeSelect = (vibe) => {
     setSelectedVibe(vibe);
-    // Navigate to the Donation Page with the selected vibe as state
     navigate('/donate', { state: vibe });
   };
 
   return (
     <div className="bg-black min-h-screen text-white flex flex-col items-center justify-center p-4 space-y-8">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-white tracking-tight mb-4">Choose Your Hero Vibe</h2>
-        <p className="text-xl text-white/80">Are you a GIGACHAD, CHILL GUY, or POOKIE?</p>
+        <h2 className="text-5xl font-extrabold tracking-wide uppercase text-white mb-4 font-anton">
+          Now That You Know Us, Tell Us Who You Are!
+        </h2>
+        <p className="text-2xl text-white/80 font-bebas-neue">Are you a GIGACHAD, CHILL GUY, or POOKIE?</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-24 w-full max-w-5xl">
@@ -56,7 +57,7 @@ const VibeCheckDonation = () => {
           <div
             key={vibe.id}
             onClick={() => handleVibeSelect(vibe)}
-            className={`bg-gray-900/50 rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 cursor-pointer group relative`}
+            className={`bg-gray-900/50 rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 cursor-pointer group relative border-2 ${vibe.borderColor}`}
           >
             <div className="h-64 bg-gray-800 flex items-center justify-center overflow-hidden">
               <img 
@@ -68,15 +69,15 @@ const VibeCheckDonation = () => {
             
             <div className="p-6 relative">
               <div className="flex justify-between items-center mb-4">
-                <h3 className={`text-2xl font-bold ${vibe.textColor}`}>
+                <h3 className={`text-3xl font-extrabold uppercase ${vibe.textColor} font-anton`}>
                   {vibe.name}
                 </h3>
               </div>
 
-              <p className="text-white/70 mb-4">{vibe.description}</p>
+              <p className="text-white/70 text-lg font-bebas-neue mb-4">{vibe.description}</p>
               
               <div className="flex justify-between items-center">
-                <span className="text-md font-semibold text-white/80">
+                <span className="text-lg font-semibold text-white/80 font-bebas-neue">
                   {vibe.text}
                 </span>
               </div>

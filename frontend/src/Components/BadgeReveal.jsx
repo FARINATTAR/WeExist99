@@ -71,7 +71,7 @@ const BadgeShowcase = () => {
         });
         setIsAnimating(true);
       }, 500);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, []);
