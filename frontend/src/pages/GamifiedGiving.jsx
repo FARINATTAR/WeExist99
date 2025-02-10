@@ -5,6 +5,7 @@ import BadgeCollection from '../Components/UnlockBadges';
 import VibeCheck from "../Components/VibeCheck";
 import ImpactDashboard from '../Components/BadgeAndProgressTracker';
 import LeaderboardSection from '../Components/CommunityLeaderboard';
+import Footer from "../Components/Footer";
 
 const GamifiedGiving = () => { 
   return (
@@ -30,6 +31,10 @@ const GamifiedGiving = () => {
 
     <div>
       <LeaderboardSection/>
+    </div>
+
+    <div>
+      <Footer/>
     </div>
     </div>
   )
